@@ -11,17 +11,31 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
+    var window: UIWindow?
+    var applicationCoordinator: ApplicationCoordinator?
+    private var navigation: UINavigationController?
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
 
-        if #available(iOS 13.0, *) {
-            //scene delegate
-         print("scene")
-        } else {
-           
-        }
+      window = UIWindow()
+      navigation = UINavigationController()
+      guard let navigationController = navigation else { return true }
+      let applicationCoordinator = ApplicationCoordinator(navigationController: navigationController)
+      self.applicationCoordinator = applicationCoordinator
+                  
+          if #available(iOS 13.0, *) {
+              //scene delegate
+           print("scene")
+          } else {
+              applicationCoordinator.start()
+          }
+//
+//        if #available(iOS 13.0, *) {
+//            //scene delegate
+//         print("scene")
+//        } else {
+//
+//        }
         return true
     }
 
