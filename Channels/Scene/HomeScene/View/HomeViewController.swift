@@ -12,6 +12,6 @@ class HomeViewController: BaseViewController<HomePresenter>, HomeViewProtocol {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.navigationController?.navigationBar.isHidden = true
     }
 }
