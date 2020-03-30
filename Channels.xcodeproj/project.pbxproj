@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -48,6 +48,8 @@
 		929A6FC62428F08D00ACB1E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		929A6FC92428F08D00ACB1E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		929A6FCB2428F08D00ACB1E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		92FEE4F82432549900B4A2D8 /* CarthageInput.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = CarthageInput.xcconfig; sourceTree = "<group>"; };
+		92FEE4FB243254C100B4A2D8 /* CarthageOutput.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = CarthageOutput.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +159,7 @@
 		929A6FBC2428F08800ACB1E7 /* Channels */ = {
 			isa = PBXGroup;
 			children = (
+				92FEE4F72432546B00B4A2D8 /* Configurations */,
 				9241888E242A2F8500B1FB74 /* ApplicationCoordination */,
 				92418891242A2F8500B1FB74 /* Base */,
 				92418885242A2F8500B1FB74 /* Scene */,
@@ -165,6 +168,15 @@
 				92418882242A2E4600B1FB74 /* AppDelegate */,
 			);
 			path = Channels;
+			sourceTree = "<group>";
+		};
+		92FEE4F72432546B00B4A2D8 /* Configurations */ = {
+			isa = PBXGroup;
+			children = (
+				92FEE4F82432549900B4A2D8 /* CarthageInput.xcconfig */,
+				92FEE4FB243254C100B4A2D8 /* CarthageOutput.xcconfig */,
+			);
+			path = Configurations;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,6 +191,7 @@
 				929A6FB82428F08800ACB1E7 /* Resources */,
 				92FEE4F52432540D00B4A2D8 /* Swiftlint Run Script */,
 				92FEE4F62432543500B4A2D8 /* Swiftgen Run Script */,
+				92FEE4FC2432550100B4A2D8 /* Carthage Run Script */,
 			);
 			buildRules = (
 			);
@@ -271,6 +284,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which swiftgen >/dev/null; then\n swiftgen\nelse\n echo \"error: SwiftGen not installed, download it from https://github.com/SwiftGen/SwiftGen\"\nfi\n\n";
+		};
+		92FEE4FC2432550100B4A2D8 /* Carthage Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"$(SRCROOT)/Monshaat_SMEOwner_IOS/Configurations/CarthageInput.xcfilelist",
+			);
+			inputPaths = (
+			);
+			name = "Carthage Run Script";
+			outputFileListPaths = (
+				"$(SRCROOT)/Monshaat_SMEOwner_IOS/Configurations/CarthageOutput.xcfilelist",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
