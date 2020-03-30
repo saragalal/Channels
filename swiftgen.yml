@@ -1,5 +1,5 @@
-input_dir: Monshaat_SMEOwner_IOS
-output_dir: Monshaat_SMEOwner_IOS
+input_dir: Channels
+output_dir: Channels
 strings:
  inputs: Resources/Localizable.strings
  outputs:
