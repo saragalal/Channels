@@ -12,7 +12,7 @@ class ApplicationCoordinator: Coordinator {
     private var window: UIWindow?
     var childCoordinators: [Coordinator] = []
     unowned let navigationController: UINavigationController
-    private var homeCoordinator: HomeCoordinator?
+    private var splashCoordinator: SplashCoordinator?
     required init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
@@ -27,12 +27,13 @@ class ApplicationCoordinator: Coordinator {
          window = appwindow
         }
         window?.rootViewController = navigationController
-        self.startHome()
+        self.startSplash()
         window?.makeKeyAndVisible()
     }
-    func startHome() {
-        let coordinator = HomeCoordinator(navigationController: navigationController)
-        self.homeCoordinator = coordinator
-        self.homeCoordinator?.start()
+    func startSplash() {
+        let coordinator = SplashCoordinator(navigationController: navigationController)
+        self.splashCoordinator = coordinator
+        self.splashCoordinator?.start()
     }
+    
 }
