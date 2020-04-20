@@ -40,7 +40,7 @@ class SpalshViewController: UIViewController {
             self.greenCircleImage.isHidden = false
             self.darkGreenCircleImage.isHidden = false
             self.blueCircleImage.isHidden = false
-            if #available(iOS 13, *) {
+            
             let animator = UIViewPropertyAnimator(duration: 1, dampingRatio: 0.7) {
               self.greenCircleImage.frame = self.greenCircleImage.frame.offsetBy(dx: -100, dy: -300)
                 self.darkGreenCircleImage.frame = self.greenCircleImage.frame.offsetBy(dx: 300, dy: 100)
@@ -48,27 +48,6 @@ class SpalshViewController: UIViewController {
                 self.appNameImage.isHidden = false
             }
                  animator.startAnimation()
-           } else {
-                let animator = UIViewPropertyAnimator(duration: 0.3, dampingRatio: 0.7) {
-                self.greenCircleImage.frame = self.greenCircleImage.frame.offsetBy(dx: -100, dy: -300)
-                self.darkGreenCircleImage.frame = self.greenCircleImage.frame.offsetBy(dx: 300, dy: 100)
-                self.blueCircleImage.frame = self.greenCircleImage.frame.offsetBy(dx: 150, dy: 600)
-                self.appNameImage.isHidden = false
-                   
-                }
-                 animator.startAnimation()
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.7) {
-                    let animator = UIViewPropertyAnimator(duration: 0.5, dampingRatio: 0.7) {
-                        self.greenCircleImage.frame = self.greenCircleImage.frame.offsetBy(dx: 100, dy: 300)
-                        self.darkGreenCircleImage.frame = self.greenCircleImage.frame.offsetBy(dx: 0, dy: 0)
-                        self.blueCircleImage.frame = self.greenCircleImage.frame.offsetBy(dx: 0, dy: 0)
-                        self.appNameImage.isHidden = false
-                          
-                    }
-                        animator.startAnimation()
-                }
-       }
-            
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                     UIView.animate(withDuration: 1, animations: {
                          self.splashImageView.isHidden = false

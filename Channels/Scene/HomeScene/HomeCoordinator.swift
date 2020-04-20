@@ -26,6 +26,7 @@ class HomeCoordinator: Coordinator {
     func start() {
         let homeView = self.createModule()
         navigationController.pushViewController(homeView, animated: true)
+        navigationController.viewControllers = [homeView]
     }    
 }
 

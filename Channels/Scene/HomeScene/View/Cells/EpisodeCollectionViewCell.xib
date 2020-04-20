@@ -1,21 +1,63 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="EpisodeCollectionViewCell" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="EpisodeCollectionViewCell" customModule="Channels" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="243" height="454"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                <rect key="frame" x="0.0" y="0.0" width="243" height="454"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image2" translatesAutoresizingMaskIntoConstraints="NO" id="dam-zf-gg2">
+                        <rect key="frame" x="0.0" y="20" width="243" height="272.5"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ARO-Nn-h3Q">
+                        <rect key="frame" x="0.0" y="346.5" width="43.5" height="20.5"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PCy-O8-EY2">
+                        <rect key="frame" x="0.0" y="302.5" width="61.5" height="29"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                        <color key="textColor" name="White Color"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
             </view>
-            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="PCy-O8-EY2" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="BG1-uG-OdS"/>
+                <constraint firstAttribute="top" secondItem="dam-zf-gg2" secondAttribute="top" constant="-20" id="EgT-Am-pkx"/>
+                <constraint firstItem="dam-zf-gg2" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="FNZ-MQ-j3F"/>
+                <constraint firstItem="PCy-O8-EY2" firstAttribute="top" secondItem="dam-zf-gg2" secondAttribute="bottom" constant="10" id="ZZ3-nA-kXg"/>
+                <constraint firstItem="ARO-Nn-h3Q" firstAttribute="top" secondItem="PCy-O8-EY2" secondAttribute="bottom" constant="15" id="aaE-JI-T90"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ARO-Nn-h3Q" secondAttribute="trailing" id="hha-di-ELH"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="PCy-O8-EY2" secondAttribute="trailing" id="hyj-xo-zcM"/>
+                <constraint firstItem="dam-zf-gg2" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" multiplier="0.6" id="mEP-aX-ZfH"/>
+                <constraint firstAttribute="trailing" secondItem="dam-zf-gg2" secondAttribute="trailing" id="oOl-bp-pnL"/>
+                <constraint firstItem="ARO-Nn-h3Q" firstAttribute="leading" secondItem="PCy-O8-EY2" secondAttribute="leading" id="p4L-NM-Uyc"/>
+            </constraints>
+            <size key="customSize" width="243" height="454"/>
+            <connections>
+                <outlet property="episodeImage" destination="dam-zf-gg2" id="u2g-Xr-Fcu"/>
+                <outlet property="subtitleLabel" destination="ARO-Nn-h3Q" id="spX-Cm-0Fv"/>
+                <outlet property="titleLabel" destination="PCy-O8-EY2" id="iXP-iT-vwL"/>
+            </connections>
+            <point key="canvasLocation" x="277.536231884058" y="220.98214285714286"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="image2" width="375" height="375"/>
+        <namedColor name="White Color">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

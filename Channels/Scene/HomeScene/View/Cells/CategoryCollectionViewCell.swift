@@ -9,10 +9,17 @@
 import UIKit
 
 class CategoryCollectionViewCell: UICollectionViewCell {
-
+    
+    @IBOutlet private weak var categoryBackgroundView: UIView!
+    @IBOutlet private weak var categoryLabel: UILabel!
+    func configure(with item: Categories?) {
+        categoryBackgroundView.layer.cornerRadius = categoryBackgroundView.frame.height / 2
+        categoryBackgroundView.layer.masksToBounds = true
+        categoryLabel.text = item?.name ?? ""
+     }
+     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
 }

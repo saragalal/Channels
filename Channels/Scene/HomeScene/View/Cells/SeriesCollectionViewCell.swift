@@ -9,10 +9,21 @@
 import UIKit
 
 class SeriesCollectionViewCell: UICollectionViewCell {
-
+    
+    @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var seriesImage: UIImageView!
+    func configure(with item: LatestMedia?) {
+        titleLabel.text = item?.title
+        if let path = item?.coverAsset?.url {
+            seriesImage.sd_setImage(with: URL(string: path),
+                                    placeholderImage: Asset.Images.placeholder.image)
+        }
+       }
+       
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        seriesImage.layer.cornerRadius = 20
+        seriesImage.layer.masksToBounds = true
     }
 
 }

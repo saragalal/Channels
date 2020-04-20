@@ -1,1 +1,5 @@
 "hello" = "hello";
+"episode.header" = "New Episodes";
+"category.header" = "Browse by categories";
+"episode.title" = "episodes";
+"series.title" = "series";

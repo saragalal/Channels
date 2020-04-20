@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="Channels" customModuleProvider="target">
             <connections>
+                <outlet property="channelCollectionView" destination="7JE-BO-3oG" id="bfK-a5-dqj"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,20 +19,55 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yQi-1R-bJo">
-                    <rect key="frame" x="181" y="441" width="52.5" height="24"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rzR-gZ-23T">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Channels" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rN9-Sv-Acr">
+                            <rect key="frame" x="20" y="75" width="142" height="39"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                            <color key="textColor" name="TitleChannelsColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" name="DarkGreyColor"/>
+                    <constraints>
+                        <constraint firstItem="rN9-Sv-Acr" firstAttribute="top" secondItem="rzR-gZ-23T" secondAttribute="top" constant="75" id="7fn-Cy-xtL"/>
+                        <constraint firstItem="rN9-Sv-Acr" firstAttribute="leading" secondItem="rzR-gZ-23T" secondAttribute="leading" constant="20" id="WqP-5u-giC"/>
+                        <constraint firstAttribute="height" constant="120" id="qdt-4b-iQL"/>
+                    </constraints>
+                </view>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="7JE-BO-3oG">
+                    <rect key="frame" x="0.0" y="120" width="414" height="776"/>
+                    <color key="backgroundColor" name="DarkGreyColor"/>
+                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="spY-j6-LwR">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="yQi-1R-bJo" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="5D1-e8-AYr"/>
-                <constraint firstItem="yQi-1R-bJo" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="gEA-wZ-fde"/>
+                <constraint firstAttribute="bottom" secondItem="7JE-BO-3oG" secondAttribute="bottom" id="6ou-Z8-zHJ"/>
+                <constraint firstItem="7JE-BO-3oG" firstAttribute="top" secondItem="rzR-gZ-23T" secondAttribute="bottom" id="B9c-ZV-EtD"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="rzR-gZ-23T" secondAttribute="trailing" id="Ne6-7l-JQ6"/>
+                <constraint firstItem="rzR-gZ-23T" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Nsb-oe-sxp"/>
+                <constraint firstItem="7JE-BO-3oG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="W6q-mG-hmm"/>
+                <constraint firstAttribute="top" secondItem="rzR-gZ-23T" secondAttribute="top" id="aqc-Gh-ViB"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="7JE-BO-3oG" secondAttribute="trailing" id="oqx-os-JVi"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="139" y="129"/>
+            <point key="canvasLocation" x="137.68115942028987" y="128.57142857142856"/>
         </view>
     </objects>
+    <resources>
+        <namedColor name="DarkGreyColor">
+            <color red="0.13699999451637268" green="0.15299999713897705" blue="0.18400000035762787" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="TitleChannelsColor">
+            <color red="0.75700002908706665" green="0.75700002908706665" blue="0.75700002908706665" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

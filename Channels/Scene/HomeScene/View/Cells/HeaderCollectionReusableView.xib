@@ -1,17 +1,68 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="U6b-Vx-4bR">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="U6b-Vx-4bR" customClass="HeaderCollectionReusableView" customModule="Channels" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="394" height="117"/>
             <autoresizingMask key="autoresizingMask"/>
-            <viewLayoutGuide key="safeArea" id="VXr-Tz-HHm"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RRn-hj-Oop">
+                    <rect key="frame" x="2" y="0.0" width="390" height="1"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="cuK-4J-TUf"/>
+                    </constraints>
+                </view>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="v12-fC-yJh">
+                    <rect key="frame" x="5" y="15" width="70" height="70"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="70" id="0ZR-s9-tvS"/>
+                        <constraint firstAttribute="width" secondItem="v12-fC-yJh" secondAttribute="height" multiplier="1:1" id="3IK-Gz-SLD"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lyO-Ec-qBT">
+                    <rect key="frame" x="90" y="20" width="71.5" height="33.5"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                    <color key="textColor" name="White Color"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kbf-bL-7ob">
+                    <rect key="frame" x="90" y="61" width="50.5" height="24"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <constraints>
+                <constraint firstItem="v12-fC-yJh" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" constant="5" id="1vf-W3-SNl"/>
+                <constraint firstItem="lyO-Ec-qBT" firstAttribute="top" secondItem="v12-fC-yJh" secondAttribute="top" constant="5" id="3Ss-3F-nKR"/>
+                <constraint firstItem="lyO-Ec-qBT" firstAttribute="leading" secondItem="v12-fC-yJh" secondAttribute="trailing" constant="15" id="POB-nH-Tnl"/>
+                <constraint firstItem="kbf-bL-7ob" firstAttribute="leading" secondItem="lyO-Ec-qBT" secondAttribute="leading" id="USB-l2-wUu"/>
+                <constraint firstItem="RRn-hj-Oop" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" constant="2" id="Ykq-Sh-UF7"/>
+                <constraint firstItem="kbf-bL-7ob" firstAttribute="bottom" secondItem="v12-fC-yJh" secondAttribute="bottom" id="fB9-QL-ib1"/>
+                <constraint firstItem="v12-fC-yJh" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" constant="15" id="rRf-Wa-b1H"/>
+                <constraint firstAttribute="trailing" secondItem="RRn-hj-Oop" secondAttribute="trailing" constant="2" id="t6H-VW-1uD"/>
+                <constraint firstItem="RRn-hj-Oop" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" id="xmG-GW-jDa"/>
+            </constraints>
+            <connections>
+                <outlet property="headerImage" destination="v12-fC-yJh" id="kxc-8w-AbE"/>
+                <outlet property="seperatorView" destination="RRn-hj-Oop" id="NSC-nd-86J"/>
+                <outlet property="subtitleLabel" destination="kbf-bL-7ob" id="NQh-5U-m18"/>
+                <outlet property="titleLabel" destination="lyO-Ec-qBT" id="60e-XL-oxe"/>
+            </connections>
+            <point key="canvasLocation" x="191.30434782608697" y="108.14732142857143"/>
         </collectionReusableView>
     </objects>
+    <resources>
+        <namedColor name="White Color">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>
