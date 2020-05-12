@@ -18,7 +18,7 @@ class EpisodeCollectionViewCell: UICollectionViewCell {
         subtitleLabel.text = item?.channel?.title ?? ""
         if let path = item?.coverAsset?.url {
             episodeImage.sd_setImage(with: URL(string: path),
-                                     placeholderImage: Asset.Images.placeholder.image)
+                                     placeholderImage: Asset.Assets.placeholder.image)
         }
        }
        

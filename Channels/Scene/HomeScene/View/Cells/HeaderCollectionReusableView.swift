@@ -40,7 +40,7 @@ class HeaderCollectionReusableView: UICollectionReusableView {
         }
         if let path = image {
     headerImage.sd_setImage(with: URL(string: path),
-                            placeholderImage: Asset.Images.placeholder.image)
+                            placeholderImage: Asset.Assets.placeholder.image)
         }
     }
 }

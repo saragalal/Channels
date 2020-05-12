@@ -9,10 +9,10 @@
 import Foundation
 struct Media: Codable, Hashable {
     let type: String?
-    let title: String?
+    public let title: String?
     let coverAsset: CoverAsset?
     let channel: Channel?
-    //let uuid = UUID()
+    var uuid = UUID()
     enum CodingKeys: String, CodingKey {
 
         case type
@@ -33,9 +33,9 @@ struct Media: Codable, Hashable {
         coverAsset = try values.decodeIfPresent(CoverAsset.self, forKey: .coverAsset)
         channel = try values.decodeIfPresent(Channel.self, forKey: .channel)
     }
-//   static func ==(lhs: Media, rhs: Media) -> Bool {
-//       return lhs.uuid == rhs.uuid
-//   }
+     static func == (lhs: Media, rhs: Media) -> Bool {
+       return lhs.uuid == rhs.uuid
+   }
 //
 //   func hash(into hasher: inout Hasher) {
 //       hasher.combine(uuid)

@@ -20,7 +20,6 @@ class HomeViewController: BaseViewController<HomePresenter>, HomeViewProtocol {
         presenter.viewDidLoad()
     }
     func setUpCollectionView() {
-    //channelCollectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
   
     channelCollectionView.register(TitleHeaderCollectionReusableView.nib,
                                    forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
@@ -41,9 +40,6 @@ class HomeViewController: BaseViewController<HomePresenter>, HomeViewProtocol {
         
         channelCollectionView.dataSource = adaptor.dataSource
         adaptor.createDataSource()
-        channelCollectionView.dataSource = adaptor.dataSource
-        adaptor.reloadData()
-        channelCollectionView.reloadData()
     }
     func addEpisodes(episodes: [Media]?) {
         adaptor.addEpisodes(episodes: episodes)

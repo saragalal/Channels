@@ -29,7 +29,7 @@ struct Channels: Codable, Hashable {
         case coverAsset
     }
     
-    init(from decoder: Decoder) throws {
+     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         title = try values.decodeIfPresent(String.self, forKey: .title)
         series = try values.decodeIfPresent([Series].self, forKey: .series)

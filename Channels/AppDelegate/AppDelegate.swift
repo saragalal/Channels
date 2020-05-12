@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
 
       window = UIWindow()
+       NetworkManager.shared = NetworkManager(config: NetworkDefaults())
       navigation = UINavigationController()
       guard let navigationController = navigation else { return true }
       let applicationCoordinator = ApplicationCoordinator(navigationController: navigationController)

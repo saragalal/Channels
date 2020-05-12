@@ -19,11 +19,11 @@ struct LatestMedia: Codable, Hashable {
         case coverAsset
     }
 
-    init(from decoder: Decoder) throws {
+   init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         type = try values.decodeIfPresent(String.self, forKey: .type)
         title = try values.decodeIfPresent(String.self, forKey: .title)
         coverAsset = try values.decodeIfPresent(CoverAsset.self, forKey: .coverAsset)
     }
-
+    
 }

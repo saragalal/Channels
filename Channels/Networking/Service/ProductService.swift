@@ -7,65 +7,55 @@
 //
 
 import Foundation
-//import Moya
-//
-//enum  ChannelService {
-//    case popular(page: Int)
-//    case search(page: Int, text: String)
-//}
-//
-//extension ChannelService: TargetType {
-//    var baseURL: URL {
-//        return URL(string: NetworkManager.shared.networkConfig.baseUrl)!
-//    }
-//    var searchURL: URL {
-//        return URL(string: NetworkManager.shared.networkConfig.baseUrl)!
-//    }
-//    var path: String {
-//        switch self {
-//        case .popular:
-//            return "/person/popular"
-//        case .search:
-//            return "/search/person"
-//        }
-//        
-//    }
-//    
-//    var method: Moya.Method {
-//        switch self {
-//        case .popular:
-//            return .get
-//        case .search:
-//            return .get
-//        }
-//    }
-//    
-//    var sampleData: Data {
-//        switch self {
-//        case .popular:
-//            return Data()
-//        case .search:
-//            return Data()
-//        }
-//    }
-//    
-//    var task: Task {        
-//        switch self {
-//        case .popular(let page) :
-//			return .requestParameters(
-//				parameters: ["api_key": NetworkManager.shared.networkConfig.apiKey,
-//                             "page": page],
-//				encoding: URLEncoding.default)
-//        case .search(let page, let text):
-//            return .requestParameters(
-//                parameters: ["api_key": NetworkManager.shared.networkConfig.apiKey,
-//                             "page": page,
-//                             "query": text],
-//                encoding: URLEncoding.default)
-//        }
-//    }
-//    
-//    var headers: [String: String]? {
-//        return nil
-//    }
-//}
+import Moya
+
+enum  ChannelService {
+    case episodes
+    case channels
+    case categories
+}
+//swiftlint:disable all
+
+extension ChannelService: TargetType {
+    var baseURL: URL {
+        return URL(string: NetworkManager.shared.networkConfig.baseUrl)!
+    }
+    var path: String {
+        switch self {
+        case .episodes:
+            return "/z5AExTtw"
+        case .channels:
+            return "/Xt12uVhM"
+        case .categories:
+            return "/A0CgArX3"
+        }
+        
+    }
+    
+    var method: Moya.Method {
+        switch self {
+        case .episodes, .channels, .categories:
+            return .get
+        }
+    }
+    
+    var sampleData: Data {
+        switch self {
+        case .episodes, .channels, .categories:
+            return Data()
+        }
+    }
+    
+    var task: Task {
+        switch self {
+        case .episodes, .channels, .categories:
+			return .requestParameters(
+                parameters: [:],
+				encoding: URLEncoding.default)
+        }
+    }
+    
+    var headers: [String: String]? {
+        return nil
+    }
+}

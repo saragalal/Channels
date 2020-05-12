@@ -7,7 +7,7 @@
 //
 
 import Foundation
-struct Categories: Codable, Hashable {
+public struct Categories: Codable, Hashable {
     
     let name: String?
 
@@ -16,7 +16,7 @@ struct Categories: Codable, Hashable {
         case name
     }
     
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         name = try values.decodeIfPresent(String.self, forKey: .name)
     }

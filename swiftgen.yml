@@ -9,7 +9,7 @@ strings:
 xcassets:
 - inputs:
     - Resources/Colors.xcassets
-    - Resources/Images.xcassets
+    - Resources/Assets.xcassets
   outputs:
     - templateName: swift4
       output: Resources/Assets-Constants.swift

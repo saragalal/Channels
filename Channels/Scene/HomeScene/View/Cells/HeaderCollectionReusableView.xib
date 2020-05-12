@@ -28,8 +28,8 @@
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lyO-Ec-qBT">
-                    <rect key="frame" x="90" y="20" width="71.5" height="33.5"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                    <rect key="frame" x="90" y="20" width="59" height="27.5"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
                     <color key="textColor" name="White Color"/>
                     <nil key="highlightedColor"/>
                 </label>

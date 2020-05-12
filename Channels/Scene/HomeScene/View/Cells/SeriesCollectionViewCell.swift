@@ -16,7 +16,7 @@ class SeriesCollectionViewCell: UICollectionViewCell {
         titleLabel.text = item?.title
         if let path = item?.coverAsset?.url {
             seriesImage.sd_setImage(with: URL(string: path),
-                                    placeholderImage: Asset.Images.placeholder.image)
+                                    placeholderImage: Asset.Assets.placeholder.image)
         }
        }
        

@@ -8,17 +8,44 @@
 
 import Foundation
 class HomeModel: BaseModel, HomeModelProtocol {
-    let channelsResponse = Bundle.main.decode(APIResponse<HomeObject>.self, from: "ChannelsResponse.json")
-    let categoriesResponse = Bundle.main.decode(APIResponse<HomeObject>.self, from: "CategoryResponse.json")
-    let episodesResponse = Bundle.main.decode(APIResponse<HomeObject>.self, from: "EpisodeResponse.json")
+    let homeParser = HomeParser()
     
     func getChannels(completion: @escaping (Result<[Channels]?, NetworkError>) -> Void) {
-        completion(.success(channelsResponse.data?.channels))
+        NetworkManager.shared.getDataFromApi(target: ChannelService.channels) { result, _ in
+           switch result {
+           case .success(let data):
+          let channels = self.homeParser.parseChannels(data: data)
+                completion(.success(channels))
+           case .failure(let error):
+               print(error)
+               completion(.failure(error))
+           }
+        }
     }
     func getEpisodes(completion: @escaping(Result<[Media]?, NetworkError>) -> Void) {
-        completion(.success(episodesResponse.data?.media))
+        NetworkManager.shared.getDataFromApi(target: ChannelService.episodes) { result, _ in
+                switch result {
+                case .success(let data):
+
+                    let media = self.homeParser.parseEpisode(data: data)
+                     completion(.success(media))
+                       
+                case .failure(let error):
+                    print(error)
+                    completion(.failure(error))
+                }
+        }
     }
     func getCategories(completion: @escaping(Result<[Categories]?, NetworkError>) -> Void) {
-        completion(.success(categoriesResponse.data?.categories))
+        NetworkManager.shared.getDataFromApi(target: ChannelService.categories) { result, _ in
+                switch result {
+                case .success(let data):
+                    let categories = self.homeParser.parseCategories(data: data)
+                     completion(.success(categories))
+                case .failure(let error):
+                    print(error)
+                    completion(.failure(error))
+                }
+        }
     }
 }

@@ -17,7 +17,10 @@ class ChannelCollectionAdaptor: NSObject {
     var categoriesObjects = [SectionObject<LatestMedia, Media, Categories>]()
     var sectionsObjects = [[SectionObject<LatestMedia, Media, Categories>]]()
     var channelsArray: [Channels]?
+    var mediaArray: [Media] = [Media]()
+    var newMedia: [Media] = [Media]()
     var collectionView: UICollectionView!
+
     func setAdaptor(collectionView: UICollectionView) {
         self.collectionView = collectionView
     }
@@ -30,7 +33,6 @@ class ChannelCollectionAdaptor: NSObject {
         print("diffable")
         switch self.sections[indexPath.section].type {
         case .episode:
-            
             return self.configureEpisodeSection(index: indexPath, media: item.media)
         case .series:
             
@@ -43,6 +45,9 @@ class ChannelCollectionAdaptor: NSObject {
             return self.configureCategorieSection(index: indexPath, categories: item.categories)
            }
     }
+    createHeader()
+    }
+    func createHeader() {
      dataSource?.supplementaryViewProvider = { [weak self] collectionView, kind, indexPath in
         switch self?.sections[indexPath.section].type {
         case .episode:
@@ -97,6 +102,17 @@ class ChannelCollectionAdaptor: NSObject {
             return UICollectionViewCell()
         }
         cell.configure(with: media)
+        if index.row == mediaObjects.count - 1 {
+            for media in mediaArray {
+                var obj = media
+                obj.uuid = UUID()
+                newMedia.append(obj)
+            }
+            self.addEpisodes(episodes: newMedia)
+            self.mediaArray.append(contentsOf: newMedia)
+            newMedia = []
+            self.reloadData()
+        }
         return cell
     }
     private func configureCourseSection(index: IndexPath, channels: LatestMedia?) -> UICollectionViewCell {
@@ -152,19 +168,26 @@ let sectionHeader = collectionView.dequeueReusableSupplementaryView(
      
     func addEpisodes(episodes: [Media]?) {
         guard let data = episodes else { return }
+        self.mediaArray.append(contentsOf: data)
+        if mediaObjects.isEmpty == true {
         for episode in data {
         let obj = SectionObject<LatestMedia, Media, Categories>(channels: nil, media: episode, categories: nil)
         self.mediaObjects.append(obj)
         }
         let section = Section(type: .episode)
         self.sections.append(section)
-        //self.sectionsObjects.append(obj)
+        } else {
+             for episode in data {
+            let obj = SectionObject<LatestMedia, Media, Categories>(channels: nil, media: episode, categories: nil)
+            self.mediaObjects.append(obj)
+            self.reloadData()
+            }
+        }
     }
     func addChannels(channels: [Channels]?) {
         guard let channels = channels else { return }
         self.channelsArray = [Channels]()
         self.channelsArray?.append(contentsOf: channels)
-        //self.sectionsObjects.append(obj)
         for channel in channels {
             if channel.series?.isEmpty ?? true {
                 let section = Section(type: .series)
@@ -190,7 +213,6 @@ let sectionHeader = collectionView.dequeueReusableSupplementaryView(
         let obj = SectionObject<LatestMedia, Media, Categories>(channels: nil, media: nil, categories: categorie)
         self.categoriesObjects.append(obj)
         }
-        //self.sectionsObjects.append(obj)
         let section = Section(type: .categories)
         self.sections.append(section)
         self.reloadData()
