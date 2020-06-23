@@ -21,7 +21,6 @@
 		924188A3242A2F8500B1FB74 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92418895242A2F8500B1FB74 /* BaseModel.swift */; };
 		924188A4242A2F8500B1FB74 /* BasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92418896242A2F8500B1FB74 /* BasePresenter.swift */; };
 		924188A5242A2F8500B1FB74 /* BaseViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92418897242A2F8500B1FB74 /* BaseViewProtocol.swift */; };
-		9278D808246A361700B6A789 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92FEFDD2243261EB00B4A2D8 /* Alamofire.framework */; };
 		9278D80A246A361700B6A789 /* Moya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92FEFDB9243261EB00B4A2D8 /* Moya.framework */; };
 		9278D999246A493000B6A789 /* HomeModelUnitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9278D998246A493000B6A789 /* HomeModelUnitTest.swift */; };
 		9278D99B246A495700B6A789 /* HomeModelMocking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9278D99A246A495700B6A789 /* HomeModelMocking.swift */; };
@@ -6870,7 +6869,6 @@
 			files = (
 				92A34291244A104B00829EDA /* SDWebImage.framework in Frameworks */,
 				9278D80A246A361700B6A789 /* Moya.framework in Frameworks */,
-				9278D808246A361700B6A789 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
