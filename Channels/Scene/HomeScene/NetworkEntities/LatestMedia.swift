@@ -26,4 +26,5 @@ struct LatestMedia: Codable, Hashable {
         coverAsset = try values.decodeIfPresent(CoverAsset.self, forKey: .coverAsset)
     }
 
+    
 }
