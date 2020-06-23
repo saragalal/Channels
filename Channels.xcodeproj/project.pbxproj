@@ -25,7 +25,6 @@
 		929A6FC02428F08800ACB1E7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929A6FBF2428F08800ACB1E7 /* SceneDelegate.swift */; };
 		929A6FC72428F08D00ACB1E7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 929A6FC62428F08D00ACB1E7 /* Images.xcassets */; };
 		929A6FCA2428F08D00ACB1E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 929A6FC82428F08D00ACB1E7 /* LaunchScreen.storyboard */; };
-		92FE00012432620900B4A2D8 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92FE0000243261F100B4A2D8 /* Alamofire.framework */; };
 		92FE00042432621600B4A2D8 /* Moya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92FEFFFF243261F000B4A2D8 /* Moya.framework */; };
 		92FE000924326A5900B4A2D8 /* SpalshViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FE000724326A5900B4A2D8 /* SpalshViewController.swift */; };
 		92FE000A24326A5900B4A2D8 /* SpalshViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92FE000824326A5900B4A2D8 /* SpalshViewController.xib */; };
@@ -36,6 +35,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		92A08CD624A232810085824F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 92FEE7C0243261DB00B4A2D8 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AE193E2F7EF6DADD2F1C20E3D55C3528;
+			remoteInfo = ShadowView;
+		};
 		92FEFE0B243261ED00B4A2D8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 92FEEC0B243261DE00B4A2D8 /* Alamofire.xcodeproj */;
@@ -6761,7 +6767,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				92FE00042432621600B4A2D8 /* Moya.framework in Frameworks */,
-				92FE00012432620900B4A2D8 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -8390,6 +8395,7 @@
 				92FEFEDE243261ED00B4A2D8 /* Moya.framework */,
 				92FEFEE0243261ED00B4A2D8 /* Pods_TMDB.framework */,
 				92FEFEE2243261ED00B4A2D8 /* Result.framework */,
+				92A08CD724A232810085824F /* ShadowView.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -19337,6 +19343,13 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		92A08CD724A232810085824F /* ShadowView.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ShadowView.framework;
+			remoteRef = 92A08CD624A232810085824F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		92FEFE0C243261ED00B4A2D8 /* Alamofire.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
